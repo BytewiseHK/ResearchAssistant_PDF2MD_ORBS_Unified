@@ -61,8 +61,8 @@ logger = logging.getLogger(__name__)
 
 # Initialize OpenAI client
 client = AsyncOpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key="REDACTED_OPENROUTER_API_KEY",
+    base_url=os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+    api_key=os.environ["OPENROUTER_API_KEY"],
 )
 
 # ======================
